@@ -59,4 +59,6 @@ dependencies {
 
     //Add navigation compose
     implementation("androidx.navigation:navigation-compose:2.8.9")
+    //Add coil compose
+    implementation("io.coil-kt:coil-compose:2.5.0")
 }
