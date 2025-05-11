@@ -1,5 +1,6 @@
 package dev.luischang.lab03countryapp.presentation.navigation
 
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -13,11 +14,29 @@ import dev.luischang.lab03countryapp.presentation.permissions.GalleryPermissionS
 fun AppNavGraph(){
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "gallery"){
+    NavHost(navController = navController, startDestination = "register"){
         composable("register") { RegisterScreen(navController) }
         composable("login") { LoginScreen(navController) }
-        composable("home") { HomeScreen() }
-        composable("gallery") { GalleryPermissionScreen() }
+
+        composable("home") {
+            DrawerScaffold(navController) {
+                HomeScreen()
+            }
+        }
+
+        composable("gallery") {
+            DrawerScaffold(navController) {
+                GalleryPermissionScreen()
+            }
+        }
+
+        composable("favorites") {
+            DrawerScaffold(navController) {
+                //TODO: Add favorites screen
+                Text("Favorites (Screen)")
+            }
+        }
+
     }
 
 }
