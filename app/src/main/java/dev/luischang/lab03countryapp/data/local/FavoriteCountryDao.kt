@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface FavoriteCountryDao {
@@ -16,7 +17,7 @@ interface FavoriteCountryDao {
     suspend fun delete(favoriteCountry: FavoriteCountryEntity)
 
     @Query("SELECT * FROM favorite_countries")
-    suspend fun getAll(): List<FavoriteCountryEntity>
+    fun getAll(): Flow<List<FavoriteCountryEntity>>
 
 
 }

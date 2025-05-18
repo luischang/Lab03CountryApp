@@ -71,6 +71,10 @@ dependencies {
     kapt("androidx.room:room-compiler:2.6.0")
     //Add Material icons
     implementation("androidx.compose.material:material-icons-extended")
+    //Add coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    //Add lifecycle viewmodel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
 
 
 

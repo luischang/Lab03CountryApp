@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dev.luischang.lab03countryapp.presentation.auth.LoginScreen
 import dev.luischang.lab03countryapp.presentation.auth.RegisterScreen
+import dev.luischang.lab03countryapp.presentation.favorites.FavoritesScreen
 import dev.luischang.lab03countryapp.presentation.home.HomeScreen
 import dev.luischang.lab03countryapp.presentation.permissions.GalleryPermissionScreen
 
@@ -32,8 +33,7 @@ fun AppNavGraph(){
 
         composable("favorites") {
             DrawerScaffold(navController) {
-                //TODO: Add favorites screen
-                Text("Favorites (Screen)")
+               FavoritesScreen()
             }
         }
 
