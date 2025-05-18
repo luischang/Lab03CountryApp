@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("kotlin-kapt")
+
 }
 
 android {
@@ -61,4 +63,16 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.8.9")
     //Add coil compose
     implementation("io.coil-kt:coil-compose:2.5.0")
+    //Add room
+    implementation("androidx.room:room-runtime:2.6.0")
+    //Add room ktx
+    implementation("androidx.room:room-ktx:2.6.0")
+    //Add room compiler
+    kapt("androidx.room:room-compiler:2.6.0")
+    //Add Material icons
+    implementation("androidx.compose.material:material-icons-extended")
+
+
+
+
 }
