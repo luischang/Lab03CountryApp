@@ -17,6 +17,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import dev.luischang.lab03countryapp.data.remote.firebase.FirebaseAuthManager
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 //Add Composable Login
 @Composable
@@ -46,7 +50,12 @@ fun LoginScreen(navController: NavController) {
         //Add Button
         Button(onClick = {
             if (email.isNotBlank() && password.isNotBlank()) {
-                navController.navigate("home")
+                CoroutineScope(Dispatchers.Main).launch {
+                    var result = FirebaseAuthManager.loginUser(email, password)
+                    if (result.isSuccess) {
+                        navController.navigate("home")
+                    }
+                }
             }
 
         }, modifier = Modifier.fillMaxWidth()) {
