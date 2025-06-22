@@ -10,6 +10,7 @@ import dev.luischang.lab03countryapp.presentation.auth.RegisterScreen
 import dev.luischang.lab03countryapp.presentation.favorites.FavoritesScreen
 import dev.luischang.lab03countryapp.presentation.home.HomeScreen
 import dev.luischang.lab03countryapp.presentation.permissions.GalleryPermissionScreen
+import dev.luischang.lab03countryapp.presentation.utils.WebViewScreen
 
 @Composable
 fun AppNavGraph(){
@@ -34,6 +35,11 @@ fun AppNavGraph(){
         composable("favorites") {
             DrawerScaffold(navController) {
                FavoritesScreen()
+            }
+        }
+        composable("web") {
+            DrawerScaffold(navController) {
+                WebViewScreen()
             }
         }
 
