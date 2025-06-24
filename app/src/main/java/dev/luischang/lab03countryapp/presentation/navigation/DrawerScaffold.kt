@@ -76,6 +76,17 @@ fun DrawerScaffold(navController: NavController, content: @Composable () -> Unit
                     }
                 )
 
+                //Chat navigation
+                NavigationDrawerItem(
+                    label = { Text("Chat") },
+                    selected = false,
+                    onClick = {
+                        navController.navigate("chat")
+                        scope.launch { drawerState.close() }
+
+                    }
+                )
+
             }
         }
     ){

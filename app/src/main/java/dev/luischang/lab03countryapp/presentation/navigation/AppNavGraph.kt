@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dev.luischang.lab03countryapp.presentation.auth.LoginScreen
 import dev.luischang.lab03countryapp.presentation.auth.RegisterScreen
+import dev.luischang.lab03countryapp.presentation.chat.GeminiChatScreen
 import dev.luischang.lab03countryapp.presentation.favorites.FavoritesScreen
 import dev.luischang.lab03countryapp.presentation.home.HomeScreen
 import dev.luischang.lab03countryapp.presentation.permissions.GalleryPermissionScreen
@@ -16,7 +17,7 @@ import dev.luischang.lab03countryapp.presentation.utils.WebViewScreen
 fun AppNavGraph(){
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "register"){
+    NavHost(navController = navController, startDestination = "home"){
         composable("register") { RegisterScreen(navController) }
         composable("login") { LoginScreen(navController) }
 
@@ -40,6 +41,12 @@ fun AppNavGraph(){
         composable("web") {
             DrawerScaffold(navController) {
                 WebViewScreen()
+            }
+        }
+
+        composable("chat") {
+            DrawerScaffold(navController) {
+                GeminiChatScreen("AIzaSyDqSi9mmlGYMCvn89Iax8B9s9yhFMuQDbQ")
             }
         }
 

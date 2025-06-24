@@ -90,6 +90,10 @@ dependencies {
     //Import logging interceptor
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
 
+    //Import markdown
+    implementation("com.mikepenz:multiplatform-markdown-renderer-compose:0.2.0")
+
+
 
 
 
