@@ -81,5 +81,16 @@ dependencies {
 
     implementation(platform("com.google.firebase:firebase-bom:33.14.0"))
 
+    //Import retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    //Import converter
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    //Import okhttp
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    //Import logging interceptor
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+
+
+
 
 }
